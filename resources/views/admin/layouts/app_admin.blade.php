@@ -38,7 +38,7 @@
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Блог</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a href="#" class="dropdown-item">Категории</a>
+                          <a href="{{ route('admin.category.index') }}" class="dropdown-item">Категории</a>
                           <a href="#" class="dropdown-item">Материалы</a>
                         </div>
                     </li>
