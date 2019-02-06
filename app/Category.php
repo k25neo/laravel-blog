@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 
 class Category extends Model
 {
+    //Mass assigned
     protected $fillable = [
       'title', 'slug', 'parent_id', 'published', 'created_by', 'modified_by'
     ];
@@ -23,5 +24,14 @@ class Category extends Model
     public function children()
     {
       return $this->hasMany(self::class, 'parent_id');
+    }
+
+    //polymorphic relation with articles
+    public function articles(){
+      return $this->morphedByMany('App\Article', 'categoryable');
+    }
+
+    public function scopeLastCategories($query, $count){
+      return $query->orderBy('created_at', 'desc')->take($count)->get();
     }
 }

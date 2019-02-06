@@ -35,6 +35,11 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
+                  <li>
+                      <a id="navbarDropdown" class="nav-link" href="{{ route('admin.index') }}"
+                      role="button" aria-expanded="false" v-pre>Панель состояния</a>
+
+                  </li>
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Блог</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -82,5 +87,7 @@
         @yield('content')
     </main>
 </div>
+<script src="{{ asset('/vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
+<script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
